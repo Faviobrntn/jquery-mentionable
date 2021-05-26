@@ -77,7 +77,9 @@
       "id" : "mentioned-user-list",
       "minimumChar" : 2,
       "parameterName" : "mentioning",
-      "position" : "bottom"
+      "position" : "bottom",
+      "name": "name",
+      "image_url": "image_url"
     }, opts);
     userListWrapper = $("<ul id='" + options.id + "'></ul>");
 
@@ -240,7 +242,7 @@
     if(data.length > 0){
       listSize = data.length;
       $.each(data, function(key, value){
-        userList.append("<li><img src='" + value.image_url + "' /><span>" + value.name + "</span></li>");
+        userList.append("<li><img src='" + value[options.image_url] + "' /><span>" + value[options.name] + "</span></li>");
       });
       userList.find("li:first-child").attr("class","active");
       bindItemClicked();

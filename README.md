@@ -61,6 +61,8 @@ There are also some options that you can parsed along
 * *minimumChar* : a minimum number of characters required to trigger user fetching.
 * *parameterName* : a name of parameter to be parsed to the user list url
 * *position* : a position of user list: left, bottom, and right.
+* *name* : the name of the field you want to use. Default: name
+* *image_url* : the name of the field you want to use. Default: image_url
 
 The following example creates a mentionable text area which will parse a string via 'filter' query parameter when 3 or more characters are typed.
 ```javascript
@@ -75,7 +77,6 @@ If you decided to customize the user list id, the base style of jquery-mentionab
 
 ## Todo
 * Rework on a base style, especially the hover and selection.
-* Enable the user to use other property name other than 'name' and 'image_url'.
 
 ## Thank
 [Tanin Na Nakorn](https://github.com/tanin47) suggested how to solve the FF issue! Thank mate!
