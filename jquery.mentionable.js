@@ -79,7 +79,8 @@
       "parameterName" : "mentioning",
       "position" : "bottom",
       "name": "name",
-      "image_url": "image_url"
+      "image_url": "image_url",
+      "tag": "name"
     }, opts);
     userListWrapper = $("<ul id='" + options.id + "'></ul>");
 
@@ -242,7 +243,7 @@
     if(data.length > 0){
       listSize = data.length;
       $.each(data, function(key, value){
-        userList.append("<li><img src='" + value[options.image_url] + "' /><span>" + value[options.name] + "</span></li>");
+        userList.append("<li data-tag='" + value[options.tag] + "'><img src='" + value[options.image_url] + "' /><span>" + value[options.name] + "</span></li>");
       });
       userList.find("li:first-child").attr("class","active");
       bindItemClicked();
@@ -268,10 +269,11 @@
    * to the text aprea
    */
   function selectUser(userItem){
+    const nickName = userItem.data("tag") || userItem.find("span").html();
     inputText    = textArea.val();
     replacedText = replaceString(caretStartPosition, caretStartPosition +
                                   fullCachedName.length, inputText, "@" +
-                                  userItem.find("span").html());
+                                  nickName);
     textArea.focus();
     textArea.val(replacedText);
     hideUserFrame();

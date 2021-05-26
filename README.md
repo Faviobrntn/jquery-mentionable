@@ -63,6 +63,7 @@ There are also some options that you can parsed along
 * *position* : a position of user list: left, bottom, and right.
 * *name* : the name of the field you want to use. Default: name
 * *image_url* : the name of the field you want to use. Default: image_url
+* *tag* : the name of the field you want to use in order to autocomplete the 'user mention'. Default: property 'name'
 
 The following example creates a mentionable text area which will parse a string via 'filter' query parameter when 3 or more characters are typed.
 ```javascript
